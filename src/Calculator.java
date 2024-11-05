@@ -15,7 +15,7 @@ public class Calculator {
 
 
         double result = cal.oper(num1, op, num2);
-        System.out.println(result);
+        System.out.println("결과 : "+result);
 
         save.addsave(result);
 
@@ -34,7 +34,7 @@ public class Calculator {
                 num2 = sc.nextDouble();                      //   ---입력받기완료---
 
                 result = cal.oper(num1, op, num2);          // 결과계산
-                System.out.println(result);
+                System.out.println("결과 : "+result);
 
                 save.addsave(result);                       //저장
 
@@ -89,6 +89,8 @@ class calclass {
                     System.out.println("0으로 나눌 수 없습니다");
                 }
                 break;
+            default:
+                System.out.println("잘못된 연산자입니다");
         }
         return result;
     }
