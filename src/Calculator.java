@@ -60,6 +60,7 @@ public class Calculator {
                 check = sc.nextInt();
 
             } else {
+                System.out.println("계산기 종료합니다");
                 break;
             }
 
