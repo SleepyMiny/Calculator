@@ -4,7 +4,8 @@ public class Calculator {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         calclass cal = new calclass();
-        saveclass save = new saveclass();       //불러오기
+        saveclass save = new saveclass();
+        reprintclass reprint = new reprintclass();//불러오기
 
         System.out.print("숫자를 입력하세요: ");    //시작코드
         double num1 = sc.nextDouble();
@@ -25,7 +26,7 @@ public class Calculator {
         for (;check == 1 || check == 2;) {                  //이어계산 저장불러오기 루프시작
 
             for (;check == 1;) {                            //이어 계산한다면
-
+                reprint.next();
                 System.out.println("결과 : "+result);        //   ---입력받기---
                 num1 = result;
                 System.out.print("기호를 입력하세요: ");
@@ -45,6 +46,7 @@ public class Calculator {
 
             if (check == 2) {                                //불러온다면
 
+                reprint.next();
                 save.printsave();
 
                 System.out.println();
@@ -52,6 +54,7 @@ public class Calculator {
                 int savenum = sc.nextInt();
                 result = save.savenum(savenum);
 
+                reprint.next();
                 System.out.println("결과 : " + result);
                 System.out.println("1, 이어 계산하기 / 2, 저장 불러오기 / (아무키를 눌러 종료)");
                 check = sc.nextInt();
@@ -129,5 +132,12 @@ class saveclass {
             return save[savecount-1];
         }
     }
+}
 
+class reprintclass {
+    void next(){
+        System.out.println();
+        System.out.println("---------------------");
+        System.out.println();
+    }
 }
